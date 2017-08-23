@@ -1,0 +1,31 @@
+{
+  "name": "fh-millicore-client",
+  "version": "0.7.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "version": "sed -i.bak \"s/sonar.projectVersion=.*/sonar.projectVersion=${npm_package_version}/\" sonar-project.properties && rm sonar-project.properties.bak && git add sonar-project.properties",
+    "test": "./node_modules/.bin/mocha -A -u exports --recursive -t 10000 ./test/unit"
+  },
+  "engines": {
+    "node": "4.4"
+  },
+  "author": "",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "fh-internal-stats": "0.1.0",
+    "fh-logger": "0.5.0",
+    "request": "^2.45.0",
+    "underscore": "^1.8.2"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-fh-build": "^0.5.0",
+    "istanbul": "^0.3.15",
+    "mocha": "^2.1.0",
+    "proxyquire": "0.4.1"
+  }
+}
